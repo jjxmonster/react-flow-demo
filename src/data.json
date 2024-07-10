@@ -1,0 +1,85 @@
+{
+	"nodes": [
+		{
+			"id": "1",
+			"type": "customer",
+			"data": {
+				"label": "Personal Banking Customer\n[Person]\nA customer of the bank, with personal bank accounts."
+			},
+			"position": { "x": 150, "y": 100 }
+		},
+		{
+			"id": "2",
+			"type": "system",
+			"data": {
+				"label": "Internet Banking System\n[Software System]\nAllows customers to view information about their bank accounts, and make payments.",
+				"targetPosition": "top",
+				"sourcePosition": "bottom",
+				"sourcePosition2": "right",
+				"id": "3"
+			},
+			"position": { "x": 150, "y": 400 }
+		},
+		{
+			"id": "3",
+			"type": "system",
+			"data": {
+				"label": "E-mail System\n[Software System]\nThe internal Microsoft Exchange e-mail system.",
+				"targetPosition": "left",
+				"sourcePosition": "top",
+				"id": "3"
+			},
+			"position": { "x": 550, "y": 400 }
+		},
+		{
+			"id": "4",
+			"type": "system",
+			"data": {
+				"label": "Mainframe Banking System\n[Software System]\nStores all of the core banking information about customers, accounts, transactions, etc.",
+				"targetPosition": "top",
+				"id": "3"
+			},
+			"position": { "x": 150, "y": 700 }
+		}
+	],
+	"edges": [
+		{
+			"id": "e1-2",
+			"source": "1",
+			"target": "2",
+			"type": "custom-edge",
+			"data": {
+				"label": "Views account balances, and makes payments using"
+			}
+		},
+		{
+			"id": "e2-4",
+			"source": "2",
+			"target": "4",
+			"type": "custom-edge",
+			"data": {
+				"label": "Gets account information from, and makes payments using"
+			}
+		},
+		{
+			"id": "e1-3",
+			"source": "3",
+			"target": "1",
+			"type": "custom-edge",
+			"data": {
+				"label": "Sends e-mail to"
+			}
+		},
+		{
+			"id": "e2-3",
+			"source": "2",
+			"target": "3",
+			"sourceHandle": "3source2",
+			"targetHandle": "3target",
+			"type": "custom-edge",
+			"data": {
+				"label": "Sends e-mail to"
+			}
+		}
+	]
+}
